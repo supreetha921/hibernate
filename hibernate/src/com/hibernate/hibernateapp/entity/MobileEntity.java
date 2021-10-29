@@ -21,6 +21,8 @@ import javax.persistence.Table;
 	@Column(name="mobile_price")
 	private double mobilePrice;
 
+	
+
 	@Column(name="mobile_rom")
 	private String rom;
 
@@ -36,6 +38,10 @@ import javax.persistence.Table;
 	@Column(name="mobile_ostype")
 	private String ostype;
 
+	public MobileEntity() {
+		System.out.println("default constructor invoked");
+	}
+	
 	
 
 	public MobileEntity(int mobileId, String mobileBrand, double mobilePrice, String rom, String color,

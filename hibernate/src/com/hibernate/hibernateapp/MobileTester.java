@@ -13,7 +13,10 @@ public class MobileTester {
 	 public static void main(String[] args) {
 		 
 		 MobileDAO dao = new MobileImpl();
-		 dao.getMobileEntity();
+		// dao.saveMobileEntity();
+		// dao.getMobileEntity();
+		// dao.updateMobileEntity();
+		 dao.deleteMobileEntity();
 		 
 	 }
 }
