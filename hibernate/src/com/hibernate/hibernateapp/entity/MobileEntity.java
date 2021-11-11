@@ -1,9 +1,14 @@
 package com.hibernate.hibernateapp.entity;
 
+import java.io.File;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
 
 @Table(name="mobile_details")
 @Entity//if we don't use,hibernate will not consider as entity
@@ -11,7 +16,9 @@ import javax.persistence.Table;
 		
 	@Id	//metadata
 		@Column(name= "mobile_id")
-	private int mobileId;
+	@GeneratedValue(generator="abc")
+	@GenericGenerator(name="abc",strategy="increment")
+	 private int mobileId;
 
 	@Column//just mention column name
 	
@@ -44,8 +51,16 @@ import javax.persistence.Table;
 	
 	
 
-	public MobileEntity(int mobileId, String mobileBrand, double mobilePrice, String rom, String color,
-			double cameraInPicel, boolean isFingerPrintAvailable, String ostype) {
+	@Override
+	public String toString() {
+		return "MobileEntity [mobileId=" + mobileId + ", mobileBrand=" + mobileBrand + ", mobilePrice=" + mobilePrice
+				+ ", rom=" + rom + ", color=" + color + ", cameraInPicel=" + cameraInPicel + ", isFingerPrintAvailable="
+				+ isFingerPrintAvailable + ", ostype=" + ostype + "]";
+	}
+
+
+
+	public MobileEntity(int mobileId,String mobileBrand, double mobilePrice, String rom, String color, double cameraInPicel, boolean isFingerPrintAvailable, String ostype) {
 		super();
 		this.mobileId = mobileId;
 		this.mobileBrand = mobileBrand;
