@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+           
+            <bean class = "java.lang.String" id= "y"></bean>
+                
+                 <bean class = "com.xworkz.cctv.Cctv" id= "z">
+           <constructor-arg name="brand" value="MI"></constructor-arg>
+            <constructor-arg name="cameraSize" value="56mp"></constructor-arg>
+            
+             <property name = "brand" value = "samsung"></property>
+              <property name = "cameraSize" value = "48mp"></property>
+                <property name = "price" value = "2500.00"></property>
+                <property name = "color" value = "black"></property>
+            </bean>
+            <bean class = "com.xworkz.cctv.Wallet" id="walletID">
+            <constructor-arg value = "blue"></constructor-arg>
+            <constructor-arg value = "puma"></constructor-arg>
+            <constructor-arg name = "material" ref="MaterialID"></constructor-arg>
+            <constructor-arg name = "money" ref="moneyID"></constructor-arg>
+            <constructor-arg name = "atmCard" ref= "atmcardID"></constructor-arg>
+            
+            <constructor-arg name = "photo" ref="photoID"></constructor-arg>
+            <constructor-arg name= "price" value="500.0"></constructor-arg>
+            
+            </bean>
+                        
+                        <bean class = "com.xworkz.cctv.ATMCard" id="atmcardID"></bean>
+                         <bean class = "com.xworkz.cctv.Material" id="MaterialID"></bean>
+                         <bean class = "com.xworkz.cctv.Money" id="moneyID"></bean>
+                          <bean class = "com.xworkz.cctv.Photo" id="photoID"></bean>
+                        
+
+                        
+            
+           </beans>
